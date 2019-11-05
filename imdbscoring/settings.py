@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'imdbscoring.wsgi.application'
 #     }
 # }
 SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=True, cast=bool)
 DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL')
