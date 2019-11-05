@@ -5,3 +5,5 @@ gunicorn==19.7.1
 django-multiselectfield==0.1.10
 psycopg2
 whitenoise
+dj-database-url
+python-decouple

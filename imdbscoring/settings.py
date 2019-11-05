@@ -20,10 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=4z7ye=^=0zn=q$x20bdyyr2z@*(p+hnm_9693_kwtt5k7ww!%'
+# SECRET_KEY = '=4z7ye=^=0zn=q$x20bdyyr2z@*(p+hnm_9693_kwtt5k7ww!%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -90,15 +90,12 @@ WSGI_APPLICATION = 'imdbscoring.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'da054pqu1r38ci',
-        'USER': 'yezilmrmhsdptt',
-        'PASSWORD': 'efa59d0a2dbf3084d29e4e09d37dfb799d020f559f6fa3edad268add9d97d2c7',
-        'HOST': 'ec2-54-235-100-99.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
 
 # Password validation
