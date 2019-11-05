@@ -3,3 +3,4 @@ djangorestframework==3.7.3
 django-rest-swagger==2.1.2
 gunicorn==19.7.1
 django-multiselectfield==0.1.10
+whitenoise
