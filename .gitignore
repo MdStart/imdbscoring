@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*/__pycache__/*
+*.py[cod]
+*.pyc
+
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+#sqlite
+db.sqlite3
+
+# Editors
+.vscode
+.idea/
+
+# Django stuff:
+*.log
+*.pot
+
+#Envs
+.env*
+
+*.code-workspace
+
+#static/media files , migrations locals
+static_cdn/
+media_cdn/
+score/migrations/
+
