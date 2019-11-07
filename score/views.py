@@ -34,7 +34,8 @@ from score import serializers
 class ImdbScoreCreateAPIView(CreateAPIView):
     """
     This class defines the create behavior of REST API named score API.
-    Through this class Admin can create API data for score API & can view the same data  
+    Through this class Admin can create a record using the create api
+    :rtype: serialized recod data 
     """
 
     queryset = ImdbScore.objects.all()
@@ -53,8 +54,8 @@ class ImdbScoreCreateAPIView(CreateAPIView):
 
 class ImdbScoreDataAPIView(ListAPIView):
     """
-    This class query all the existing score API data from database & display to all the users 
-    through django_rest_framework's inbuild html template  
+    Imdb Score List api displays recorded data with pagination
+    :rtype: Paginated List of records 
     """
     queryset = ImdbScore.objects.all()
     serializer_class = serializers.ImdbScoreSerializer
@@ -64,7 +65,7 @@ class ImdbScoreDataAPIView(ListAPIView):
 
 class ImdbScoreUpdateAPIView(RetrieveUpdateAPIView):
     """
-    This class allows the users to perform Update operation on score API 
+    Imdb retrieve or update api allows users to perform Update operation on exisitng records
     """
     queryset = ImdbScore.objects.all()
     serializer_class = serializers.ImdbScoreSerializer
@@ -87,7 +88,7 @@ class ImdbScoreUpdateAPIView(RetrieveUpdateAPIView):
 
 class ImdbScoreDeleteAPIView(DestroyAPIView):
     """
-    This class allows users to perform delete operation over API data 
+    Delete Api to allow users to perform delete operation by id
     """
     queryset = ImdbScore.objects.all()
     serializer_class = serializers.ImdbScoreSerializer
@@ -104,7 +105,8 @@ class ImdbScoreDeleteAPIView(DestroyAPIView):
 
 class ImdbScoreSearchAPIView(ListAPIView):
     """
-    This class allows users to perform search operation over API data through various search fields 
+    Imdb Search Api allow users to perform search operation over the data through allowed search fields
+    :search params: name, director, imdb_Score, popularity99
     """
     serializer_class = serializers.ImdbScoreSerializer
     filter_backends= [SearchFilter, OrderingFilter]
