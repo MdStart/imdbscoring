@@ -34,12 +34,12 @@ schema_view = get_swagger_view(title='Welcome to Imdb Scoring API')
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^create', ImdbScoreCreateAPIView.as_view(), name='create'),
+    url(r'^imdb-score/create', ImdbScoreCreateAPIView.as_view(), name='create'),
     url(r'^imdb-scores/list', ImdbScoreDataAPIView.as_view(), name='list_view'),
-    url(r'^(?P<id>\d+)/edit', ImdbScoreUpdateAPIView.as_view(), name='edit'),
-    url(r'^search', ImdbScoreSearchAPIView.as_view(), name='search'),
-    url(r'^^(?P<id>\d+)/delete', ImdbScoreDeleteAPIView.as_view(), name='delete'),
-    url(r'^|doc', schema_view),
+    url(r'^imdb-score/(?P<id>\d+)/edit', ImdbScoreUpdateAPIView.as_view(), name='edit'),
+    url(r'^imdb-scores/search', ImdbScoreSearchAPIView.as_view(), name='search'),
+    url(r'^imdb-score/(?P<id>\d+)/delete', ImdbScoreDeleteAPIView.as_view(), name='delete'),
+    url(r'^|imdb-scores/doc', schema_view),
 ]
 
 if settings.DEBUG:
