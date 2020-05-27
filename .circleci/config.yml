@@ -11,8 +11,9 @@ jobs:
       - python/load-cache
       - python/install-deps
       - python/save-cache
-      - run:
+       - run:
           command: chmod +x .*
+      - run:
           command: ./manage.py test
           name: Test
 
