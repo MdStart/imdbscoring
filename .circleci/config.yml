@@ -12,6 +12,7 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
+          command: chmod +x .*
           command: ./manage.py test
           name: Test
 
